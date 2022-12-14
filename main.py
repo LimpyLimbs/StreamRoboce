@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from os import environ
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
@@ -9,7 +10,7 @@ chrome_options.add_argument("--no-sandbox")
 URL = "https://www.twitch.tv/pest"
 driver = webdriver.Chrome(options=chrome_options)
 
-driver.get(URL)
+driver.get(environ.get('URL'))
 
 exit_script = False
 
